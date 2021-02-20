@@ -1,0 +1,65 @@
+﻿body {
+    background-image: linear-gradient(#98C1D9,#3D5A80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 6em;
+    border:solid;
+    padding:2%;
+}
+
+.navbar-custom-1{
+    background-color: #3D5A80;
+    color:white;
+}
+
+a:hover {
+    color: #EE6C4D;
+}
+
+.carousel-caption{
+    text-align:left;
+    margin-bottom:10vh;
+}
+
+.btn{
+    font-size:1em;
+    background-color:#EE6C4D;
+    color:white;
+}
+
+    .btn:hover, .btn-outline-custom:hover {
+        font-size: 102%;
+        background-color: white;
+        color: #EE6C4D;
+        outline-color: #EE6C4D;
+    }
+
+.btn-outline-custom {
+    outline-color: white;
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+#collections .col-8, #collections .col-4 {
+    padding: 0;
+}
+
+#collections img{
+    width:100%;
+}
+
+.container-custom-footer{
+    background-color:#293241;
+}
+
+#map{
+    height:400px;
+}
