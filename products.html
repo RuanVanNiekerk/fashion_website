@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/index.css" type="text/css" ;
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
     <title></title>
 </head>
 <body>
@@ -50,6 +50,193 @@
             </form>
         </div>
     </nav>
+
+    <div id="view">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 view-custom">
+                    <div class="card mb-4 box-shadow">
+                        <div>
+                            <img class="card-img-top card-top-zoom" id="view_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                        </div>
+                        <div class="card-body card-body-zoom">
+                            <h3 id="view_name">Title</h3>
+                            <p class="card-text" id="view_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-custom">Buy</button>
+                                    <button type="button" class="btn btn-sm btn-outline-custom" onclick="view_close()">Cancel</button>
+                                </div>
+                                <small class="text-muted price" id="view_price">R 1,900</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="featured">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Featured Items</h2>
+                    </div>
+                </div>
+                <div class="row featured_content mb-3 mb-md-5">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_0">
+                            <img class="card-img-top" id="card_0_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_0_name">Product Name</h3>
+                                <p class="card-text" id="card_0_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_0_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_1">
+                            <img class="card-img-top" id="card_1_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_1_name">Product Name</h3>
+                                <p class="card-text" id="card_1_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_1_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_1_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_1_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_2">
+                            <img class="card-img-top" id="card_2_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_2_name">Product Name</h3>
+                                <p class="card-text" id="card_2_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_2_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_2_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_2_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row featured_content mb-3 mb-md-5">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_3">
+                            <img class="card-img-top" id="card_3_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_3_name">Product Name</h3>
+                                <p class="card-text" id="card_3_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_3_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_3_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_3_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_4">
+                            <img class="card-img-top" id="card_4_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_4_name">Product Name</h3>
+                                <p class="card-text" id="card_4_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_4_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_4_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_4_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_5">
+                            <img class="card-img-top" id="card_5_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_5_name">Product Name</h3>
+                                <p class="card-text" id="card_5_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_5_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_5_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_5_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row featured_content mb-3 mb-md-5">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_6">
+                            <img class="card-img-top" id="card_6_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_6_name">Product Name</h3>
+                                <p class="card-text" id="card_6_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_6_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_6_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_6_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_7">
+                            <img class="card-img-top" id="card_7_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_7_name">Product Name</h3>
+                                <p class="card-text" id="card_7_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_7_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_7_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_7_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow" id="card_8">
+                            <img class="card-img-top" id="card_8_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+                            <div class="card-body">
+                                <h3 id="card_8_name">Product Name</h3>
+                                <p class="card-text" id="card_8_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_8_view" onclick="view_item(getAttribute('id'))">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_8_buy">Buy</button>
+                                    </div>
+                                    <small class="text-muted" id="card_8_price">R 1,900</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container-fluid container-custom-footer">
