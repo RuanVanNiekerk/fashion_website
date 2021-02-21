@@ -46,6 +46,16 @@ class product {
         document.getElementById("view_price").innerHTML = "$ " + catalog[details].price;
         document.getElementById("view_img").src = "images/" + catalog[details].image;
     }
+
+    //add to shopping cart
+    static cart_add(e) {
+        console.log(e);
+        let code = e.slice(5, 6);
+        let cart_item = catalog[code];
+
+        let save_item = JSON.stringify(cart_item);
+        localStorage.setItem("Cart", save_item);
+    }
 }
 
 let product_obj = new product();
@@ -115,6 +125,7 @@ let catalog = [
         category: "suits"
     }
 ];
+let cart = [];
 
 // for loops that create a array of each product category.
 let catalog_suits = [];
@@ -146,6 +157,11 @@ function view_item(e) {
 
 function view_close() {
     document.getElementById("view").style = "display: none;";
+}
+
+function buy_item(e) {
+    document.getElementById("view").style = "display: none;";
+    product.cart_add(e);
 }
 
 // google maps script

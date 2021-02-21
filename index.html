@@ -47,6 +47,7 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
+                <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon"/></a>
             </form>
         </div>
     </nav>
@@ -64,7 +65,6 @@
                             <p class="card-text" id="view_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-custom">Buy</button>
                                     <button type="button" class="btn btn-sm btn-outline-custom" onclick="view_close()">Cancel</button>
                                 </div>
                                 <small class="text-muted price" id="view_price">R 1,900</small>
@@ -130,7 +130,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_0_price">R 1,900</small>
                                 </div>
@@ -146,7 +146,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_1_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_1_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_1_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_1_price">R 1,900</small>
                                 </div>
@@ -162,7 +162,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_2_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_2_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_2_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_2_price">R 1,900</small>
                                 </div>
@@ -180,7 +180,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_3_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_3_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_3_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_3_price">R 1,900</small>
                                 </div>
@@ -196,7 +196,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_4_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_4_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_4_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_4_price">R 1,900</small>
                                 </div>
@@ -212,7 +212,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_5_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_5_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_5_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_5_price">R 1,900</small>
                                 </div>
@@ -230,7 +230,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_6_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_6_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_6_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_6_price">R 1,900</small>
                                 </div>
@@ -246,7 +246,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_7_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_7_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_7_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_7_price">R 1,900</small>
                                 </div>
@@ -262,7 +262,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-custom" id="card_8_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_8_buy">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_8_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
                                     </div>
                                     <small class="text-muted" id="card_8_price">R 1,900</small>
                                 </div>
