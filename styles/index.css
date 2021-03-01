@@ -86,3 +86,12 @@ a:hover {
 #map{
     height:400px;
 }
+
+#shipping_info {
+    padding: 3%;
+}
+
+#payment_info{
+    display:none;
+    padding:3%;
+}

@@ -15,77 +15,105 @@
     <title></title>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div id="vue_container">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navbar-custom-1" href="products.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="products.html">Suits</a>
-                        <a class="dropdown-item" href="#">Casual Wear</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Accessories</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle navbar-custom-1" href="products.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="products.html">Suits</a>
+                            <a class="dropdown-item" href="#">Casual Wear</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Accessories</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="cart_chechout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <form id="shipping_info" class="form-group" @submit.prevent="continue_payment()">
+                            <h3>Customer Information</h3><br />
+                            <input type="text" class="form-control" placeholder="Name" />
+                            <input type="text" class="form-control" placeholder="Last Name" /><br />
+                            <input type="email" class="form-control" placeholder="Email" /><br />
+                            <input type="text" class="form-control" placeholder="Phone Number" /><br />
+                            <h3>Shipping Address</h3><br />
+                            <input type="text" class="form-control" placeholder="Address" />
+                            <input type="text" class="form-control" placeholder="Unit Nr. (Optional)" /><br />
+                            <input type="text" class="form-control" placeholder="City" /><br />
+                            <input type="text" class="form-control" placeholder="Country" />
+                            <input type="text" class="form-control" placeholder="State" />
+                            <input type="text" class="form-control" placeholder="Zip Code" /><br />
+
+                            <input type="submit" class="btn" value="Continue to Payment" />
+                        </form>
+                        <form id="payment_info" class="form-group">
+                            <h3>Payment Information</h3>
+                            <input type="text" class="form-control" placeholder="Name on Card"/><br />
+                            <input type="text" class="form-control" placeholder="Account Number" /><br />
+                            <input type="text" class="form-control" placeholder="MM/YY" />
+                            <input type="text" class="form-control" placeholder="CVC" /><br />
+
+                            <input type="submit" class="btn" value="Buy"/>
+                        </form>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="#contact">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div id="cart_chechout">
-        <div class="container">
-            <div class="row">
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-2">
-                            <img src="v-bind:src="'images/' + item_info.image""/>
+                    <div class="col-4 p-5" style="background-color:white">
+                        <div class="row py-5" v-for="item in cart_inv">
+                            <div class="col-4">
+                                <img v-bind:src=" 'images/' + item.image" style="width:100%" />
+                            </div>
+                            <div class="col-7">
+                                <p>{{item.name}}</p>
+                                <p>$ {{item.price}}</p>
+                            </div>
+                            <div class="col-1">
+                                <button @click="removeProd(index)">remove</button>
+                            </div>
                         </div>
-                        <div class="col-8">
-
-                        </div>
-                        <div class="col-2">
-
-                        </div>
+                        <p>Price: {{cart_price}}</p>
                     </div>
-                </div>
-                <div class="col-3">
-
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div class="container-fluid container-custom-footer">
+                <div class="row p-5">
+                    <div class="col-12 p-3 text-center text-white" id="contact">
+                        <h3>Contact us</h3>
+                        <p>
+                            Tel: 041 587 6352<br />
+                            email: info@mail.com
+                        </p>
+                    </div>
+                    <div class="col-12 p-3 text-center">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <footer>
-        <div class="container-fluid container-custom-footer">
-            <div class="row p-5">
-                <div class="col-12 p-3 text-center text-white" id="contact">
-                    <h3>Contact us</h3>
-                    <p>
-                        Tel: 041 587 6352<br />
-                        email: info@mail.com
-                    </p>
-                </div>
-                <div class="col-12 p-3 text-center">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 

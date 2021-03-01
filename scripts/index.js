@@ -68,12 +68,18 @@ let vue_fashion = new Vue({
             }
         ],
         cart_inv: [],
+        car_price: [],
         view_item: []
     },
     methods: {
         //adds product to cart when you press the buy button
         addProd: function (x) {
             this.cart_inv.push(this.catalog[x]);
+            this.cart_price += this.catalog[x].price;
+            localStorage.setItem("cart", JSON.stringify(this.cart_inv));
+        },
+        removeProd: function (x) {
+            this.cart_inv.splice(this.catalog[x], 1);
             localStorage.setItem("cart", JSON.stringify(this.cart_inv));
         },
         viewProd: function (x) {
@@ -88,9 +94,16 @@ let vue_fashion = new Vue({
         viewClose: function () {
             this.view_item.splice(0),
             document.getElementById("view").style = "display: none;";
+        },
+
+        continue_payment: function () {
+            document.getElementById("shipping_info").style.display = "none";
+            document.getElementById("payment_info").style.display = "initial";
         }
     }
 });
+
+vue_fashion.cart_inv = JSON.parse(localStorage.getItem("cart"));
 
 let cart = [];
 
