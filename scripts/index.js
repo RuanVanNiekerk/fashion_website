@@ -68,7 +68,7 @@ let vue_fashion = new Vue({
             }
         ],
         cart_inv: [],
-        car_price: [],
+        cart_price: [],
         view_item: []
     },
     methods: {
