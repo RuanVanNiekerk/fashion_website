@@ -15,114 +15,174 @@
     <title></title>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
-        <a class="navbar-brand" href="index.html"><img src="images/logo2.png" id="logo" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div id="vue_container">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
+            <a class="navbar-brand" href="index.html"><img src="images/logo2.png" id="logo" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navbar-custom-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Suits</a>
-                        <a class="dropdown-item" href="#">Casual Wear</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Accessories</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-custom-1" href="#contact">Contact Us</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
-                <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon" /></a>
-            </form>
-        </div>
-    </nav>
-
-    <div id="view">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 view-custom">
-                    <div class="card mb-4 box-shadow">
-                        <div>
-                            <img class="card-img-top card-top-zoom" id="view_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle navbar-custom-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Suits</a>
+                            <a class="dropdown-item" href="#">Casual Wear</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Accessories</a>
                         </div>
-                        <div class="card-body card-body-zoom">
-                            <h3 id="view_name">Title</h3>
-                            <p class="card-text" id="view_desc">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-custom" onclick="view_close()">Cancel</button>
-                                </div>
-                                <small class="text-muted price" id="view_price">R 1,900</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-custom-1" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
+                    <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon" /></a>
+                </form>
             </div>
-        </div>
-    </div>
+        </nav>
 
-    <div id="featured">
-        <div class="album py-5">
+        <div id="view">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <h2>Featured Items</h2>
-                    </div>
-                </div>
-                <div class="row featured_content">
-                    <div class="col-md-4 mb-3 mb-md-5" v-for="item in catalog">
-                        <div class="card mb-4 box-shadow" id="card_0">
-                            <img class="card-img-top" id="card_0_img" src="images/TS-alsworth-navy-7.jpg" alt="Thumbnail [100%x225]">
-                            <div class="card-body">
-                                <h3 id="card_0_name">{{item.name}}</h3>
-                                <p class="card-text" id="card_0_desc">{{item.desc}}</p>
+                    <div class="col-md-6 view-custom" v-for="item_info in view_item">
+                        <div class="card mb-4 box-shadow">
+                            <div>
+                                <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item_info.image" alt="Thumbnail [100%x225]">
+                            </div>
+                            <div class="card-body card-body-zoom">
+                                <h3 id="view_name">{{item_info.name}}</h3>
+                                <p class="card-text" id="view_desc">{{item_info.desc}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" onclick="view_item(getAttribute('id'))">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" onclick="buy_item(getAttribute('id'))">Buy</button>
+                                        <button type="button" class="btn btn-sm btn-outline-custom" @click="viewClose()">Cancel</button>
                                     </div>
-                                    <small class="text-muted" id="card_0_price">{{item.price}}</small>
+                                    <small class="text-muted price" id="view_price">{{item_info.price}}</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+
+        <div id="featured">
+
+            <div class="accordian">
+                <button class="btn" data-toggle="collapse" data-target="#collapseOne">Suits</button>
+                <div id="collapseOne" class="collapse">
+                    <div class="album py-5">
+                        <div class="container">
+                            <div class="row featured_content">
+                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
+                                    <div class="card mb-4 box-shadow">
+                                        <div>
+                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                        </div>
+                                        <div class="card-body card-body-zoom">
+                                            <h3 id="view_name">{{item.name}}</h3>
+                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                </div>
+                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" data-toggle="collapse" data-target="#collapseTwo">Casual Wear</button>
+                <div id="collapseTwo" class="collapse">
+                    <div class="album py-5">
+                        <div class="container">
+                            <div class="row featured_content">
+                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
+                                    <div class="card mb-4 box-shadow">
+                                        <div>
+                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                        </div>
+                                        <div class="card-body card-body-zoom">
+                                            <h3 id="view_name">{{item.name}}</h3>
+                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                </div>
+                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" data-toggle="collapse" data-target="#collapseThree">Accessories</button>
+                <div id="collapseThree" class="collapse">
+                    <div class="album py-5">
+                        <div class="container">
+                            <div class="row featured_content">
+                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
+                                    <div class="card mb-4 box-shadow">
+                                        <div>
+                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                        </div>
+                                        <div class="card-body card-body-zoom">
+                                            <h3 id="view_name">{{item.name}}</h3>
+                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                </div>
+                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid container-custom-footer">
+                <div class="row p-5">
+                    <div class="col-12 p-3 text-center text-white" id="contact">
+                        <h3>Contact us</h3>
+                        <p>
+                            Tel: 041 587 6352<br />
+                            email: info@mail.com
+                        </p>
+                    </div>
+                    <div class="col-12 p-3 text-center">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <footer>
-        <div class="container-fluid container-custom-footer">
-            <div class="row p-5">
-                <div class="col-12 p-3 text-center text-white" id="contact">
-                    <h3>Contact us</h3>
-                    <p>
-                        Tel: 041 587 6352<br />
-                        email: info@mail.com
-                    </p>
-                </div>
-                <div class="col-12 p-3 text-center">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
