@@ -76,6 +76,27 @@ let vue_fashion = new Vue({
                 category: "suits"
             },
 
+            {
+                name: "Classic tuxedo in black fine twill",
+                desc: "Two-piece classic tuxedo in black fine twill for the formal event. The jacket has a classic shawl lapel in satin and satin dressed buttons and pocket frames.",
+                price: "399",
+                image: "TS-Smoking-01.jpg",
+                category: "casual"
+            },
+            {
+                name: "Black fine twill with stretch",
+                desc: "Three-piece classic suit in black fine twill with stretch. The perfect suit for both formal and business events.",
+                price: "436",
+                image: "TS-traveller-black-11.jpg",
+                category: "casual"
+            },
+            {
+                name: "Beige checkered blazer",
+                desc: "Beige blazer in 100% wool with discrete glen check pattern in light blue. Designed with a peak lapel, single vent at back and front pockets. ",
+                price: "215.20",
+                image: "TS-albi-beige-peak-5.jpg",
+                category: "casual"
+            },
 
             {
                 name: "Oriental print pocket square",
@@ -174,6 +195,7 @@ let vue_fashion = new Vue({
         addProd: function (x) {
             this.cart_inv.push(this.catalog[x]);
             localStorage.setItem("cart", JSON.stringify(this.cart_inv));
+            alert("Item has been added to your Cart");
         },
         //removes items from cart. also updates cart price as items are removed
         removeProd: function (x) {
