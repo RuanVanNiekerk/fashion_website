@@ -1,4 +1,12 @@
-﻿body {
+﻿/*GENERAL CSS*/
+#return_btn {
+    position: fixed;
+    z-index: 9998;
+    top: 90%;
+    left:90%;
+}
+
+body {
     background-image: linear-gradient(#98C1D9,#3D5A80);
     background-size: cover;
     background-repeat: no-repeat;
@@ -94,4 +102,25 @@ a:hover {
 #payment_info{
     display:none;
     padding:3%;
+}
+
+/*CSS FOR PRODUCTS.HTML*/
+.product_collapse{
+    width:80%;
+    margin:auto;
+    margin-bottom:1%;
+}
+
+.product_collapse:hover{
+    cursor:pointer;
+}
+
+.product_collapse a{
+    height:40px;
+    text-align:center;
+}
+
+.product_collapse .card-top {
+    background-color: #EE6C4D;
+    color: white;
 }

@@ -1,6 +1,15 @@
 
 let vue_fashion = new Vue({
     el: '#vue_container',
+
+    created() {
+        this.fill_catalogs();
+        this.rand_sort();
+        this.cart_inv = JSON.parse(localStorage.getItem("cart"));
+        this.cart_price = this.add_price;
+        this.display_total();
+    },
+
     data: {
         catalog: [
             {
@@ -65,23 +74,115 @@ let vue_fashion = new Vue({
                 price: "215.20",
                 image: "TS-albi-beige-peak-5.jpg",
                 category: "suits"
-            }
+            },
+
+
+            {
+                name: "Oriental print pocket square",
+                desc: "Make a statement at your next party with this dapper oriental print pocket square in wool and modal mix.",
+                price: "19",
+                image: "11597 Oriental print pocket square - folded.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Green paisley pocket square",
+                desc: "Make a statement at the next party with this dapper pocket square in green with a paisley print in a wool and modal mix.",
+                price: "19",
+                image: "DSC_8177.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Beige checkered blazer",
+                desc: "Make a statement at your next party with this dapper navy herringbone silk pocket square.",
+                price: "19",
+                image: "DSC_8179.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Paisley silk scarf",
+                desc: "This versatile paisley print silk scarf with dark navy background will elevate your everyday outfit or compliment your evening wear.",
+                price: "49",
+                image: "Paisley-silk-scarf-model-11584.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Paisley viscose scarf",
+                desc: "Scarf made from high quality viscose that can be used to tie together your outfit. ",
+                price: "29",
+                image: "Paisley-viscose-scarf-model-11582.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Striped viscose scarf",
+                desc: "Superior quality scarf made of light and soft-on-the-skin viscose fabric. The colourful stripes make it the perfect accessory for a dapper look.",
+                price: "29",
+                image: "striped-viscose-scarf-model-11581.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Dotted suspenders navy and dark orange",
+                desc: "Dotted, high-quality suspenders in navy and dark orange. Add a pair of suspenders to your party outfit for an intriguing and modern finish.",
+                price: "29",
+                image: "Tailor-Store-suspenders-black-orange.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Striped suspenders blue and burgundy",
+                desc: "High-quality striped suspenders in trendy blue and burgundy with clips. Add a pair of suspenders to your party outfit for an intruiging and modern finish.",
+                price: "29",
+                image: "Tailor-Store-suspenders-blue-burgundy.jpg",
+                category: "accessories"
+            },
+            {
+                name: "Black belt in 100% braided leather",
+                desc: "Black belt in 100% braided leather and with a buckle in an antiqued-silver-finish. A classic piece which can easily be styled with your suit trousers, chinos and jeans.",
+                price: "39",
+                image: "Tailor-Store-belt-black.jpg",
+                category: "accessories"
+            },
         ],
+        catalog_suits: [],
+        catalog_casual: [],
+        catalog_accessories: [],
+        catalog_random: [],
         cart_inv: [],
-        cart_price: [],
+        cart_price: "",
         view_item: []
     },
+
     methods: {
-        //adds product to cart when you press the buy button
+        // for loops that create a array of each product category.
+        fill_catalogs: function () {
+            for (let i = 0; i < this.catalog.length; i++) {
+                if (this.catalog[i].category == "suits") {
+                    this.catalog_suits.push(this.catalog[i]);
+                }
+            }
+            for (let i = 0; i < this.catalog.length; i++) {
+                if (this.catalog[i].category == "casual") {
+                    this.catalog_casual.push(this.catalog[i]);
+                }
+            }
+            for (let i = 0; i < this.catalog.length; i++) {
+                if (this.catalog[i].category == "accessories") {
+                    this.catalog_accessories.push(this.catalog[i]);
+                }
+            }
+
+        },
+        //adds items to cart when you press the buy button
         addProd: function (x) {
             this.cart_inv.push(this.catalog[x]);
-            this.cart_price += this.catalog[x].price;
             localStorage.setItem("cart", JSON.stringify(this.cart_inv));
         },
+        //removes items from cart. also updates cart price as items are removed
         removeProd: function (x) {
             this.cart_inv.splice(this.catalog[x], 1);
+            this.cart_price = this.add_price;
+            this.display_total();
             localStorage.setItem("cart", JSON.stringify(this.cart_inv));
         },
+        //displays the the viewed item
         viewProd: function (x) {
             this.view_item.push(this.catalog[x]),
             this.showProd();
@@ -99,33 +200,32 @@ let vue_fashion = new Vue({
         continue_payment: function () {
             document.getElementById("shipping_info").style.display = "none";
             document.getElementById("payment_info").style.display = "initial";
+        },
+        //show total price on checkout
+        display_total: function () {
+            console.log(this.cart_price);
+            document.getElementById("checkout_total").innerHTML = "Total: $" + this.cart_price;
+        },
+        rand_sort: function () {
+            for (let i = 0; i < 9; i++) {
+                this.catalog_random.push(this.catalog[Math.floor(Math.random() * this.catalog.length)]);
+            };
         }
+    },
+
+    computed: {
+        add_price: function () {
+            let price = 0;
+            for (let i = 0; i < this.cart_inv.length; i++) {
+                price += parseInt(this.cart_inv[i].price);
+            }
+            console.log(price);
+            return price;
+        }        
     }
 });
 
-vue_fashion.cart_inv = JSON.parse(localStorage.getItem("cart"));
-
 let cart = [];
-
-// for loops that create a array of each product category.
-let catalog_suits = [];
-for (let i = 0; i < catalog.length; i++) {
-    if (catalog[i].category == "suits") {
-        catalog_suits += catalog[i];
-    }
-}
-let catalog_casual = [];
-for (let i = 0; i < catalog.length; i++) {
-    if (catalog[i].category == "casual") {
-        catalog_casual += catalog[i];
-    }
-}
-let catalog_accessories = [];
-for (let i = 0; i < catalog.length; i++) {
-    if (catalog[i].category == "accessories") {
-        catalog_accessories += catalog[i];
-    }
-}
 
 product.fill_featured();
 
@@ -138,6 +238,12 @@ function view_item(e) {
 function buy_item(e) {
     document.getElementById("view").style = "display: none;";
     product.cart_add(e);
+}
+
+//moves screen to top of page
+function toTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 // google maps script

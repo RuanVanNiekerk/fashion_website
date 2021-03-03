@@ -53,6 +53,8 @@
             </div>
         </nav>
 
+        <button onclick="toTop()" class="btn" id="return_btn">Return to Top</button>
+
         <div id="view">
             <div class="container">
                 <div class="row">
@@ -80,25 +82,33 @@
         <div id="featured">
 
             <div class="accordian">
-                <button class="btn" data-toggle="collapse" data-target="#collapseOne">Suits</button>
-                <div id="collapseOne" class="collapse">
-                    <div class="album py-5">
-                        <div class="container">
-                            <div class="row featured_content">
-                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
-                                    <div class="card mb-4 box-shadow">
-                                        <div>
-                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
-                                        </div>
-                                        <div class="card-body card-body-zoom">
-                                            <h3 id="view_name">{{item.name}}</h3>
-                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                <div class="card product_collapse">
+                    <a data-toggle="collapse" data-target="#collapseOne">
+                        <div class="card-top">
+                            <h3>Suits</h3>
+                        </div>
+                    </a>
+                    <div id="collapseOne" class="collapse">
+                        <div class="album py-5">
+                            <div class="container">
+                                <div class="row featured_content">
+                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_suits">
+                                        <div class="card mb-4 box-shadow">
+                                            <div>
+                                                <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                            </div>
+                                            <div class="card-body card-body-zoom">
+                                                <h3 id="view_name">{{item.name}}</h3>
+                                                <p class="card-text" id="view_desc">{{item.desc}}</p>                                                
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                    </div>
+                                                    <small class="text-muted price" id="view_price">{{item.price}}</small>
                                                 </div>
-                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
                                             </div>
                                         </div>
                                     </div>
@@ -108,25 +118,33 @@
                     </div>
                 </div>
 
-                <button class="btn" data-toggle="collapse" data-target="#collapseTwo">Casual Wear</button>
-                <div id="collapseTwo" class="collapse">
-                    <div class="album py-5">
-                        <div class="container">
-                            <div class="row featured_content">
-                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
-                                    <div class="card mb-4 box-shadow">
-                                        <div>
-                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
-                                        </div>
-                                        <div class="card-body card-body-zoom">
-                                            <h3 id="view_name">{{item.name}}</h3>
-                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                <div class="card product_collapse">
+                    <a data-toggle="collapse" data-target="#collapseTwo">
+                        <div class="card-top">
+                            <h3>Casual Wear</h3>
+                        </div>
+                    </a>
+                    <div id="collapseTwo" class="collapse">
+                        <div class="album py-5">
+                            <div class="container">
+                                <div class="row featured_content">
+                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_casual">
+                                        <div class="card mb-4 box-shadow">
+                                            <div>
+                                                <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                            </div>
+                                            <div class="card-body card-body-zoom">
+                                                <h3 id="view_name">{{item.name}}</h3>
+                                                <p class="card-text" id="view_desc">{{item.desc}}</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                    </div>
+                                                    <small class="text-muted price" id="view_price">{{item.price}}</small>
                                                 </div>
-                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
                                             </div>
                                         </div>
                                     </div>
@@ -136,25 +154,33 @@
                     </div>
                 </div>
 
-                <button class="btn" data-toggle="collapse" data-target="#collapseThree">Accessories</button>
-                <div id="collapseThree" class="collapse">
-                    <div class="album py-5">
-                        <div class="container">
-                            <div class="row featured_content">
-                                <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
-                                    <div class="card mb-4 box-shadow">
-                                        <div>
-                                            <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
-                                        </div>
-                                        <div class="card-body card-body-zoom">
-                                            <h3 id="view_name">{{item.name}}</h3>
-                                            <p class="card-text" id="view_desc">{{item.desc}}</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
-                                                    <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                <div class="card product_collapse">
+                    <a data-toggle="collapse" data-target="#collapseThree">
+                        <div class="card-top">
+                            <h3>Accessories</h3>
+                        </div>
+                    </a>
+                    <div id="collapseThree" class="collapse">
+                        <div class="album py-5">
+                            <div class="container">
+                                <div class="row featured_content">
+                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_accessories">
+                                        <div class="card mb-4 box-shadow">
+                                            <div>
+                                                <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
+                                            </div>
+                                            <div class="card-body card-body-zoom">
+                                                <h3 id="view_name">{{item.name}}</h3>
+                                                <p class="card-text" id="view_desc">{{item.desc}}</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                                    </div>
+                                                    <small class="text-muted price" id="view_price">{{item.price}}</small>
                                                 </div>
-                                                <small class="text-muted price" id="view_price">{{item.price}}</small>
                                             </div>
                                         </div>
                                     </div>
@@ -163,6 +189,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

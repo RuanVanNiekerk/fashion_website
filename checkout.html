@@ -48,6 +48,8 @@
             </div>
         </nav>
 
+        <button onclick="toTop()" class="btn" id="return_btn">Return to Top</button>
+
         <div id="cart_chechout">
             <div class="container">
                 <div class="row">
@@ -70,15 +72,16 @@
                         </form>
                         <form id="payment_info" class="form-group">
                             <h3>Payment Information</h3>
-                            <input type="text" class="form-control" placeholder="Name on Card"/><br />
+                            <input type="text" class="form-control" placeholder="Name on Card" /><br />
                             <input type="text" class="form-control" placeholder="Account Number" /><br />
                             <input type="text" class="form-control" placeholder="MM/YY" />
                             <input type="text" class="form-control" placeholder="CVC" /><br />
 
-                            <input type="submit" class="btn" value="Buy"/>
+                            <input type="submit" class="btn" value="Buy" />
                         </form>
                     </div>
                     <div class="col-4 p-5" style="background-color:white">
+                        <h3>Checkout</h3>
                         <div class="row py-5" v-for="item in cart_inv">
                             <div class="col-4">
                                 <img v-bind:src=" 'images/' + item.image" style="width:100%" />
@@ -88,11 +91,11 @@
                                 <p>$ {{item.price}}</p>
                             </div>
                             <div class="col-1">
-                                <button @click="removeProd(index)">remove</button>
+                                <button class="btn" @click="removeProd(index)">remove</button>
                             </div>
                         </div>
                         <div>
-                            <p>Price: {{cart_price}}</p>
+                            <p id="checkout_total">Price: </p>
                         </div>
                     </div>
                 </div>
