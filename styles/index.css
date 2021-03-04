@@ -1,9 +1,7 @@
 ﻿/*GENERAL CSS*/
 #return_btn {
-    position: fixed;
     z-index: 9998;
-    top: 90%;
-    left:90%;
+    margin-left:auto;
 }
 
 body {
@@ -26,6 +24,20 @@ h1 {
 .navbar-custom-1{
     background-color: #3D5A80;
     color:white;
+}
+
+.custom-toggler{
+    background-color:white;
+}
+
+.navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger4.svg?color=EE6C4D');
+}
+.custom-toggler:hover .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger4.svg?color=ffffff');
+}
+.custom-toggler:hover {
+    background-color: #EE6C4D;
 }
 
 a:hover {
@@ -75,7 +87,7 @@ a:hover {
     outline-width: 1px;
 }
 
-#collections .col-8, #collections .col-4 {
+#collections .col-md-8, #collections .col-md-4 {
     padding: 0;
 }
 
@@ -123,4 +135,10 @@ a:hover {
 .product_collapse .card-top {
     background-color: #EE6C4D;
     color: white;
+}
+
+@media(max-width: 600px) {
+    .product_collapse {
+        width: 100%;
+    }
 }

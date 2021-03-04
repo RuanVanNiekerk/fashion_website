@@ -17,28 +17,28 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
         <a class="navbar-brand" href="#"><img src="images/logo2.png" id="logo" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link navbar-custom-1" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navbar-custom-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle navbar-custom-1" href="products.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="products.html">Suits</a>
-                        <a class="dropdown-item" href="products.html">Casual Wear</a>
+                        <a class="dropdown-item" href="#">Casual Wear</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="products.html">Accessories</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-custom-1 disabled" href="about.html">About</a>
+                    <a class="nav-link navbar-custom-1" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link navbar-custom-1" href="#contact">Contact Us</a>
@@ -47,7 +47,7 @@
         </div>
     </nav>
 
-    <button onclick="toTop()" class="btn" id="return_btn">Return to Top</button>
+    <button onclick="toTop()" class="btn fixed-bottom mr-5 mb-5" id="return_btn">Return to Top</button>
 
     <div class="container pb-5 mt-3 mt-md-5" id="staff">
         <div class="row">
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="row my-3 my-md-5" id="collection-odd">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card mb-4 p-3 p-md-5 box-shadow" id="card_0">
                     <img class="card-img-top" src="images/profile-user.png" alt="Thumbnail [100%x225]">
                     <div class="card-body">
@@ -65,21 +65,21 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="bg-dark h-50 py-3 px-3 py-md-5 px-md-5 text-center text-white ">
+            <div class="col-md-8">
+                <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                     <h2>Person's Position at Business</h2>
                     <p>Description of person's position at business</p>
                 </div>
             </div>
         </div>
         <div class="row my-3 my-md-5">
-            <div class="col-8">
-                <div class="bg-dark h-50 py-3 px-3 py-md-5 px-md-5 text-center text-white ">
+            <div class="order-2 order-md-1 col-md-8">
+                <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                     <h2>Person's Position at Business</h2>
                     <p>Description of person's position at business</p>
                 </div>
             </div>
-            <div class="col-4" id="collection-even">
+            <div class="order-1 order-md-2 col-md-4" id="collection-even">
                 <div class="card mb-4 p-3 p-md-5 box-shadow" id="card_0">
                     <img class="card-img-top" src="images/profile-user.png" alt="Thumbnail [100%x225]">
                     <div class="card-body">
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="row my-3 my-md-5">
-            <div class="col-4" id="collection-odd">
+            <div class="col-md-4" id="collection-odd">
                 <div class="card mb-4 p-3 p-md-5 box-shadow" id="card_0">
                     <img class="card-img-top" src="images/profile-user.png" alt="Thumbnail [100%x225]">
                     <div class="card-body">
@@ -99,8 +99,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="bg-dark h-50 py-3 px-3 py-md-5 px-md-5 text-center text-white ">
+            <div class="col-md-8">
+                <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                     <h2>Person's Position at Business</h2>
                     <p>Description of person's position at business</p>
                 </div>

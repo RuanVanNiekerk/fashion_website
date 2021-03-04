@@ -17,22 +17,22 @@
 <body>
     <div id="vue_container">
         <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
-            <a class="navbar-brand" href="index.html"><img src="images/logo2.png" id="logo" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="images/logo2.png" id="logo" /></a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link navbar-custom-1" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link navbar-custom-1" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle navbar-custom-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle navbar-custom-1" href="products.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Suits</a>
+                            <a class="dropdown-item" href="products.html">Suits</a>
                             <a class="dropdown-item" href="#">Casual Wear</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Accessories</a>
@@ -46,14 +46,14 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
                     <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon" /></a>
                 </form>
             </div>
         </nav>
 
-        <button onclick="toTop()" class="btn" id="return_btn">Return to Top</button>
+        <button onclick="toTop()" class="btn fixed-bottom mr-5 mb-5" id="return_btn">Return to Top</button>
 
         <div id="view">
             <div class="container">
@@ -80,7 +80,6 @@
         </div>
 
         <div id="featured">
-
             <div class="accordian">
                 <div class="card product_collapse">
                     <a data-toggle="collapse" data-target="#collapseOne">
@@ -92,14 +91,14 @@
                         <div class="album py-5">
                             <div class="container">
                                 <div class="row featured_content">
-                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_suits">
+                                    <div class="col-6 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_suits">
                                         <div class="card mb-4 box-shadow">
                                             <div>
                                                 <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
                                             </div>
                                             <div class="card-body card-body-zoom">
                                                 <h3 id="view_name">{{item.name}}</h3>
-                                                <p class="card-text" id="view_desc">{{item.desc}}</p>                                                
+                                                <p class="card-text" id="view_desc">{{item.desc}}</p>
                                             </div>
                                             <div class="card-footer">
                                                 <div class="d-flex justify-content-between align-items-center">
@@ -128,7 +127,7 @@
                         <div class="album py-5">
                             <div class="container">
                                 <div class="row featured_content">
-                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_casual">
+                                    <div class="col-6 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_casual">
                                         <div class="card mb-4 box-shadow">
                                             <div>
                                                 <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
@@ -164,7 +163,7 @@
                         <div class="album py-5">
                             <div class="container">
                                 <div class="row featured_content">
-                                    <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_accessories">
+                                    <div class="col-6 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_accessories">
                                         <div class="card mb-4 box-shadow">
                                             <div>
                                                 <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">

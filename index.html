@@ -18,7 +18,7 @@
     <div id="vue_container">
         <nav class="navbar sticky-top navbar-expand-lg navbar-custom-1">
             <a class="navbar-brand" href="#"><img src="images/logo2.png" id="logo" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -46,14 +46,14 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
                     <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon" /></a>
                 </form>
             </div>
         </nav>
 
-        <button onclick="toTop()" class="btn" id="return_btn">Return to Top</button>
+        <button onclick="toTop()" class="btn fixed-bottom mr-5 mb-5" id="return_btn">Return to Top</button>
 
         <div id="view">
             <div class="container">
@@ -105,14 +105,14 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <!--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a>-->
         </div>
 
         <div id="featured">
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div class="row featured_content">
-                        <div class="col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
+                        <div class="col-6 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog">
                             <div class="card mb-4 box-shadow">
                                 <div>
                                     <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="row" id="collection-odd">
-                <div class="col-4">
+                <div class="col-md-4 order-2 order-md-1">
                     <div class="bg-light h-100 py-3 px-3 py-md-5 px-md-5 text-center ">
                         <div class="my-3 py-3">
                             <h2 class="display-5">EVENING WEAR</h2>
@@ -166,19 +166,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-md-8 order-1 order-md-2">
                     <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                         <img src="images/styleguide_1_125.jpg" />
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-md-8 order-3 order-md-3">
                     <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                         <img src="images/styleguide_2_129.jpg" />
                     </div>
                 </div>
-                <div class="col-4" id="collection-even">
+                <div class="col-md-4 order-4 order-md-4" id="collection-even">
                     <div class="bg-light h-100 py-3 px-3 py-md-5 px-md-5 text-center">
                         <div class="my-3 py-3">
                             <h2 class="display-5">OFFICE WEAR</h2>
@@ -190,7 +190,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4" id="collection-odd">
+                <div class="col-md-4 order-6 order-md-5" id="collection-odd">
                     <div class="bg-light h-100 py-3 px-3 py-md-5 px-md-5 text-center">
                         <div class="my-3 py-3">
                             <h2 class="display-5">LEISURE WEAR</h2>
@@ -201,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-md-8 order-5 order-md-6">
                     <div class="bg-dark py-3 px-3 py-md-5 px-md-5 text-center text-white ">
                         <img src="images/styleguide_3_132.jpg" />
                     </div>
