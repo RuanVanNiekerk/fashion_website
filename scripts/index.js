@@ -167,7 +167,7 @@ let vue_fashion = new Vue({
         catalog_accessories: [],
         catalog_random: [],
         cart_inv: [],
-        cart_price: "",
+        cart_price: 0,
         view_item: []
     },
 
@@ -238,18 +238,18 @@ let vue_fashion = new Vue({
     computed: {
         add_price: function () {
             let price = 0;
-            for (let i = 0; i < this.cart_inv.length; i++) {
-                price += parseInt(this.cart_inv[i].price);
+            if (this.cart_inv != null) {
+                for (let i = 0; i < this.cart_inv.length; i++) {
+                    price += parseInt(this.cart_inv[i].price);
+                }
+                console.log(price);
             }
-            console.log(price);
             return price;
         }        
     }
 });
 
 let cart = [];
-
-product.fill_featured();
 
 //functions that open and close view div
 function view_item(e) {
