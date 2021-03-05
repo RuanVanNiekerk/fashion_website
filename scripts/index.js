@@ -5,7 +5,7 @@ let vue_fashion = new Vue({
     created() {
         this.fill_catalogs();
         this.rand_sort();
-        this.cart_inv = JSON.parse(localStorage.getItem("cart"));
+        this.cart_inv = this.check_null;
         this.cart_price = this.add_price;
         this.display_total();
     },
@@ -245,7 +245,12 @@ let vue_fashion = new Vue({
                 console.log(price);
             }
             return price;
-        }        
+        },
+        check_null: function () {
+            if (JSON.parse(localStorage.getItem("cart")) != null) {
+                return JSON.parse(localStorage.getItem("cart"))
+            }
+        }
     }
 });
 
