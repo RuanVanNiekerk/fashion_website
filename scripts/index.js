@@ -247,7 +247,7 @@ let vue_fashion = new Vue({
             return price;
         },
         check_null: function () {
-            if (JSON.parse(localStorage.getItem("cart")) != null || JSON.parse(localStorage.getItem("cart")) != undefined) {
+            if (JSON.parse(localStorage.getItem("cart")) != null && JSON.parse(localStorage.getItem("cart")) != undefined) {
                 return JSON.parse(localStorage.getItem("cart"))
             }
         }
