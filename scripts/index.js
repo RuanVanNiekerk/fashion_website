@@ -1,4 +1,3 @@
-
 let vue_fashion = new Vue({
     el: '#vue_container',
 
@@ -193,6 +192,9 @@ let vue_fashion = new Vue({
         },
         //adds items to cart when you press the buy button
         addProd: function (x) {
+            if (this.cart_inv == null || this.cart_inv == undefined){
+                this.cart_inv = [];
+            }
             this.cart_inv.push(this.catalog[x]);
             localStorage.setItem("cart", JSON.stringify(this.cart_inv));
             alert("Item has been added to your Cart");
@@ -247,7 +249,7 @@ let vue_fashion = new Vue({
             return price;
         },
         check_null: function () {
-            if (JSON.parse(localStorage.getItem("cart")) != null) {
+            if (JSON.parse(localStorage.getItem("cart")) != null && JSON.parse(localStorage.getItem("cart")) != undefined) {
                 return JSON.parse(localStorage.getItem("cart"))
             }
         }
