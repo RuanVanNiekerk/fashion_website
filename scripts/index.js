@@ -192,7 +192,11 @@ let vue_fashion = new Vue({
         },
         //adds items to cart when you press the buy button
         addProd: function (x) {
+<<<<<<< HEAD
             if (this.cart_inv == null || this.cart_inv == undefined){
+=======
+            if (this.cart_inv == null || this.cart_in == undefined){
+>>>>>>> e8831876d5f5a3d35add6848d8bee6d812181e3f
                 this.cart_inv = [];
             }
             this.cart_inv.push(this.catalog[x]);
