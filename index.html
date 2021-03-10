@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navbar-custom-1" href="products.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            Products
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="products.html">Suits</a>
@@ -46,7 +46,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input id="search " class="form-control form-control-custom" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
                     <a href="checkout.html"><img src="images/shopping-cart-w.png" id="checkout_icon" /></a>
                 </form>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div class="row featured_content">
-                        <div class="col-6 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_random">
+                        <div class="col-12 col-md-4 mb-3 mb-md-5" v-for="(item, index) in catalog_random">
                             <div class="card mb-4 box-shadow">
                                 <div>
                                     <img class="card-img-top card-top-zoom" id="view_img" v-bind:src="'images/' + item.image" alt="Thumbnail [100%x225]">
@@ -136,10 +136,10 @@
                                 <div class="card-footer">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
                                             <button type="button" class="btn btn-sm btn-outline-custom" id="card_0_buy" @click="addProd(index)">Buy</button>
+                                            <button type="button" class="btn-2 btn-sm btn-outline-custom" id="card_0_view" @click="viewProd(index)">View</button>
                                         </div>
-                                        <small class="text-muted price" id="view_price">{{item.price}}</small>
+                                        <small class="text-muted price" id="view_price">${{item.price}}</small>
                                     </div>
                                 </div>
                             </div>

@@ -21,6 +21,20 @@ h1 {
     padding:2%;
 }
 
+h2 {
+    color: white;
+    margin-bottom: 5vh;
+    text-decoration: underline solid 3px;
+}
+
+#search-bar {
+    margin-right: 2vw;
+}
+
+.form-control-custom {
+    width: auto;
+}
+
 .navbar-custom-1{
     background-color: #3D5A80;
     color:white;
@@ -40,13 +54,19 @@ h1 {
     background-color: #EE6C4D;
 }
 
+.nav-link.disabled {
+    color: white;
+    text-decoration: underline solid 3px #EE6C4D;
+}
+
 a:hover {
     color: #EE6C4D;
 }
 
 #checkout_icon {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 #view{
@@ -63,15 +83,34 @@ a:hover {
     margin:auto;
 }
 
-.carousel-caption{
-    text-align:left;
-    margin-bottom:10vh;
+.carousel img {
+    height:100vh;
+    margin-top: -117px;
+    object-fit:cover;
 }
 
-.btn{
-    font-size:1em;
-    background-color:#EE6C4D;
-    color:white;
+.carousel h1{
+    font-size:10vw;
+}
+
+.carousel-caption {
+    text-align: left;
+    margin-bottom: 10vh;
+}
+
+.btn {
+    font-size: 1em;
+    background-color: #EE6C4D;
+    color: white;
+    border-style: solid;
+}
+
+.btn-2 {
+    margin-left: 20px;
+    font-size: 1em;
+    background-color: white;
+    color: #EE6C4D;
+    border-style: none;
 }
 
     .btn:hover, .btn-outline-custom:hover {
